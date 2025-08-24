@@ -2,9 +2,9 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 
-author 'YourName'
+author 'HootroSA'
 description 'Business Advertisement System for FiveM with QBCore/QBox and ox_lib support'
-version '2.0.0'
+version '1.0.0'
 
 shared_scripts {
     '@ox_lib/init.lua',
