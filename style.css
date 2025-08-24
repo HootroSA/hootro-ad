@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow: hidden;
+}
+
+.business-ad-container {
+    position: fixed;
+    z-index: 9999;
+    width: 320px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(51, 65, 85, 1);
+    border-radius: 8px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.business-ad-container:hover {
+    box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.2);
+}
+
+.business-ad-container.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.business-ad-container.visible {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+/* Position Classes */
+.business-ad-container.top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.business-ad-container.top-center {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.business-ad-container.top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.business-ad-container.center-left {
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.business-ad-container.center-right {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.business-ad-container.bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+.business-ad-container.bottom-center {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.business-ad-container.bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Animation variants for different positions */
+.business-ad-container.top-left.hidden,
+.business-ad-container.center-left.hidden,
+.business-ad-container.bottom-left.hidden {
+    transform: translateX(-100%) scale(0.95);
+}
+
+.business-ad-container.top-right.hidden,
+.business-ad-container.center-right.hidden,
+.business-ad-container.bottom-right.hidden {
+    transform: translateX(100%) scale(0.95);
+}
+
+.business-ad-container.top-center.hidden {
+    transform: translateX(-50%) translateY(-100%) scale(0.95);
+}
+
+.business-ad-container.bottom-center.hidden {
+    transform: translateX(-50%) translateY(100%) scale(0.95);
+}
+
+.progress-bar {
+    height: 4px;
+    background: rgba(51, 65, 85, 1);
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #8B5CF6, #EC4899);
+    width: 100%;
+    transition: transform 0.1s linear;
+    transform-origin: left;
+}
+
+.ad-content {
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.business-image-container {
+    flex-shrink: 0;
+}
+
+.business-image {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid rgba(51, 65, 85, 1);
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+.ad-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.business-name {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.status-container {
+    margin-bottom: 8px;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background: #10B981;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.business-message {
+    color: #CBD5E1;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+/* Status color variants */
+.status-badge.open { background: #10B981; }
+.status-badge.closed { background: #EF4444; }
+.status-badge.sale { background: #F59E0B; }
+.status-badge.new_stock { background: #3B82F6; }
+.status-badge.grand_opening { background: #8B5CF6; }
+.status-badge.24_7 { background: #06B6D4; }
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .business-ad-container {
+        width: calc(100vw - 40px);
+        max-width: 320px;
+    }
+    
+    .business-ad-container.top-center,
+    .business-ad-container.bottom-center {
+        left: 20px;
+        right: 20px;
+        transform: none;
+        width: auto;
+    }
+    
+    .business-ad-container.top-center.hidden {
+        transform: translateY(-100%) scale(0.95);
+    }
+    
+    .business-ad-container.bottom-center.hidden {
+        transform: translateY(100%) scale(0.95);
+    }
+}
