@@ -3,7 +3,7 @@ game 'gta5'
 lua54 'yes'
 
 author 'HootroSA'
-description 'Business Advertisement System for FiveM with QBCore/QBox and ox_lib support'
+description 'Business Advertisement System'
 version '1.0.0'
 
 shared_scripts {
