@@ -2,6 +2,8 @@
 
 A comprehensive business advertisement system for FiveM servers with QBCore/QBox and ox_lib support.
 
+Preview: https://streamable.com/trzc6x
+
 ## Features
 
 - **Business Advertisement System** - Allow players to create and manage business advertisements
